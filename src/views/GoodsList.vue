@@ -60,48 +60,12 @@
   import NavHeader from './../components/NavHeader.vue'
   import NavFooter from './../components/NavFooter.vue'
   import NavBread from './../components/NavBread.vue'
+  import axios from 'axios'
   export default {
 //    name: 'HelloWorld',
     data() {
       return {
-        goodList:[
-          {
-            "productId":"10001",
-            "productName":"",
-            "productPrice":"333",
-            "productImg":"小米空气净化器 2.jpg"
-          },
-          {
-            "productId":"10002",
-            "productName":"",
-            "productPrice":"333",
-            "productImg":"小米空气净化器 2.jpg"
-          },
-          {
-            "productId":"10003",
-            "productName":"",
-            "productPrice":"333",
-            "productImg":"小米空气净化器 2.jpg"
-          },
-          {
-            "productId":"10004",
-            "productName":"",
-            "productPrice":"333",
-            "productImg":"小米空气净化器 2.jpg"
-          },
-          {
-            "productId":"10001",
-            "productName":"",
-            "productPrice":"3333334",
-            "productImg":"小米空气净化器 2.jpg"
-          },
-          {
-            "productId":"10005",
-            "productName":"",
-            "productPrice":"333",
-            "productImg":"小米空气净化器 2.jpg"
-          }
-        ]
+        goodList:[]
 
       }
     },
@@ -109,6 +73,17 @@
       NavHeader,
       NavFooter,
       NavBread
+    },
+    mounted(){
+      this.getGoodsList();
+    },
+    methods:{
+      getGoodsList(){
+        axios.get('/api/appData').then((result)=>{
+          console.log(result);
+          this.goodList =result.data.data;
+        })
+      }
     }
   }
 </script>
