@@ -61,7 +61,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
   .header {
     width: 100%;
     background-color: white;

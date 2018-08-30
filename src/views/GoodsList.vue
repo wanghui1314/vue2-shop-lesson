@@ -27,7 +27,7 @@
           <div class="accessory-list-wrap">
             <div class="accessory-list col-4">
               <ul>
-                <li>
+                <li v-for='item in goodList'>
                   <div class="pic">
                     <a href="#"><img src="/static/1.jpg" alt=""></a>
                   </div>
@@ -52,9 +52,10 @@
 
 <script>
   import './../assets/css/base.css'
-  import './../assets/css/nav-bread.css'
-  import './../assets/css/nav-footer.css'
-  import './../assets/css/nav-header.css'
+//  由于所有的样式都拆分出去了所以这里注释了
+//  import './../assets/css/nav-bread.css'
+//  import './../assets/css/nav-footer.css'
+//  import './../assets/css/nav-header.css'
   import './../assets/css/goods-list.css'
   import NavHeader from './../components/NavHeader.vue'
   import NavFooter from './../components/NavFooter.vue'
@@ -63,7 +64,7 @@
 //    name: 'HelloWorld',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        goodList: []
       }
     },
     components:{
