@@ -29,11 +29,11 @@
               <ul>
                 <li v-for='item in goodList'>
                   <div class="pic">
-                    <a href="#"><img src="/static/1.jpg" alt=""></a>
+                    <a href="#"><img v-bind:src="/static/ + item.productImg" alt=""></a>
                   </div>
                   <div class="main">
-                    <div class="name">小米电视4 55英寸</div>
-                    <div class="price">3999</div>
+                    <div class="name">{{item.productName}}</div>
+                    <div class="price">{{item.productPrice}}</div>
                     <div class="btn-area">
                       <a href="javascript:;" class="btn btn--m">加入购物车</a>
                     </div>
@@ -64,7 +64,45 @@
 //    name: 'HelloWorld',
     data() {
       return {
-        goodList: []
+        goodList:[
+          {
+            "productId":"10001",
+            "productName":"",
+            "productPrice":"333",
+            "productImg":"小米空气净化器 2.jpg"
+          },
+          {
+            "productId":"10002",
+            "productName":"",
+            "productPrice":"333",
+            "productImg":"小米空气净化器 2.jpg"
+          },
+          {
+            "productId":"10003",
+            "productName":"",
+            "productPrice":"333",
+            "productImg":"小米空气净化器 2.jpg"
+          },
+          {
+            "productId":"10004",
+            "productName":"",
+            "productPrice":"333",
+            "productImg":"小米空气净化器 2.jpg"
+          },
+          {
+            "productId":"10001",
+            "productName":"",
+            "productPrice":"3333334",
+            "productImg":"小米空气净化器 2.jpg"
+          },
+          {
+            "productId":"10005",
+            "productName":"",
+            "productPrice":"333",
+            "productImg":"小米空气净化器 2.jpg"
+          }
+        ]
+
       }
     },
     components:{
