@@ -81,7 +81,8 @@
       getGoodsList(){
         axios.get('/api/appData').then((result)=>{
           console.log(result);
-          this.goodList =result.data.data;
+          var res = result.data.data;
+          this.goodList =res.result;
         })
       }
     }
